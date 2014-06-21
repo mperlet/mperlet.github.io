@@ -58,7 +58,18 @@
     margin-right: 20px;
     margin-top: 3%;
     }
+a:link {
+    text-decoration: none;
+}
+a { color: inherit;text-decoration: none; } 
+a:hover 
+{	
+	    -webkit-filter: blur(5px);
 
+     color: white; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
     </style>
 </head>
 
@@ -71,8 +82,8 @@
             "Responsive image img-circle" class="img-responsive img-circle"
             src="http://www.gravatar.com/avatar/5a723776dce27109fe40081cb2b88216.png?s=200"></div>
 
-            <div class="col-md-2">
-                <h2>Mathias Perlet</h2>
+            <div class="col-md-3">
+                <h1>Mathias Perlet</h1>
             </div>
         </div>
         <hr>
@@ -81,75 +92,102 @@
             <!-- Three columns of text below the carousel -->
 
             <div class="row" style="color: white;">
-                <div class="col-lg-2">
+                <div class="col-lg-3">
+					<a href=
+                    "https://github.com/mperlet">
                     <i class="fa fa-github fa-5x fa-inverse">&nbsp;</i>
 
                     <h2>Software</h2>
 
                     <p>Web 2.0, Python, Linux</p>
+					</a>
+            </div><!-- /.col-lg-4 -->
 
-                    <p><a class="btn btn-default" href=
-                    "https://github.com/mperlet">github.com »</a></p>
-                </div><!-- /.col-lg-4 -->
-
-                <div class="col-lg-2">
+                <div class="col-lg-3">
+					<a href=
+                    "https://www.flickr.com/photos/mperlet">
                     <i class="fa fa-camera fa-5x fa-inverse">&nbsp;</i>
 
                     <h2>Fotos</h2>
 
-                    <p>Hobbyfotograf, Sony Alpha 58, Flickr</p>
-
-                    <p><a class="btn btn-default" href=
-                    "https://www.flickr.com/photos/mperlet">flickr.com
-                    »</a></p>
+                    <p>Hobbyfotograf, Sony Alpha 58, Landschaften, Flickr</p>
+					</a>
+					
+					<hr />
+					
+					<div id="images"></div>
                 </div><!-- /.col-lg-4 -->
 
-                <div class="col-lg-2">
-                    <i class="fa fa-youtube fa-5x fa-inverse">&nbsp;</i>
-
-                    <h2>Youtube</h2>
-
-                    <p>Unsinn, Spass, Solala</p>
-
-                    <p><a class="btn btn-default" href=
-                    "https://www.youtube.com/channel/UCKBxmSif8UvkbulSBwpx0Mw">youtube.com
-                    »</a></p>
-                </div><!-- /.col-lg-4 -->
-
-                <div class="col-lg-2">
+                <div class="col-lg-3">
+					<a href=
+                    "https://twitter.com/mperlet_">
                     <i class="fa fa-twitter fa-5x fa-inverse">&nbsp;</i>
 
                     <h2>Twitter</h2>
 
                     <p>Microblog, Bilder aus dem Alltag, Gedanken</p>
-
-                    <p><a class="btn btn-default" href=
-                    "https://twitter.com/mperlet_">twitter.com »</a></p>
+                    </a>
+                    
+                    <hr />
+                    <a class="twitter-timeline" 
+					   href="https://twitter.com/mperlet_" 
+					   data-chrome="nofooter transparent noheader noscrollbar" 
+					   data-widget-id="324534752004685824"
+					   height="100">
+					   Tweets von @mperlet_
+					</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </div><!-- /.col-lg-4 -->
 
-                <div class="col-lg-2">
-                    <i class="fa fa-user fa-5x fa-inverse">&nbsp;</i>
-
-                    <h2>About me</h2>
-
-                    <p>Über mich Seite....</p>
-
-                    <p><a class="btn btn-default" href=
-                    "http://about.me/mperlet">about.me »</a></p>
-                </div><!-- /.col-lg-4 -->
-
-                <div class="col-lg-2">
+                <div class="col-lg-3">
+					<a href=
+                    "http://blog.mperlet.de/">
                     <i class="fa fa-bold fa-5x fa-inverse">&nbsp;</i>
-
                     <h2>Blog</h2>
-
                     <p>Technischer Firlefanz</p>
-
-                    <p><a class="btn btn-default" href=
-                    "http://blog.mperlet.de/">blog.mperlet.de »</a></p>
+					</a>
+                    
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
         </div>
     </div>
+    
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+		var i = 0;
+        $.getJSON("http://flickrit.pboehm.org/photos/mperlet", function(data){
+			
+            $.each(data, function(i,item){
+
+                var image =
+                    '<a href="' + item.photo_url + '">' +
+                    '<img style="width:25%;" src="' + item.url_z +
+                    '"/></a><p>' + item.title +
+                    '</p>';
+
+                $(image).appendTo("#images");
+                
+                return (i++!=2);
+
+            });
+        });
+        $.getJSON("    https://github.com/mperlet.xml", function(data){
+			console.log(data);
+            $.each(data, function(i,item){
+
+                var image =
+                    '<a href="' + item.photo_url + '">' +
+                    '<img style="width:25%;" src="' + item.url_z +
+                    '"/></a>' + item.title;
+
+                $(image).appendTo("#images");
+                
+                return (i++!=2);
+
+            });
+        });
+    });
+    
+</script>
 </body>
 </html>
