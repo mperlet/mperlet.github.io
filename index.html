@@ -82,8 +82,20 @@ a:hover
             "Responsive image img-circle" class="img-responsive img-circle"
             src="http://www.gravatar.com/avatar/5a723776dce27109fe40081cb2b88216.png?s=200"></div>
 
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <h1>Mathias Perlet</h1>
+                <address>
+					<a href="http://www.rostock.de/">
+					<i class="fa fa-home">&nbsp;</i> <strong>Wohnt in</strong><br>
+						Rostock &middot; Mecklenburg-Vorpommern
+					</a>
+				</address>
+                <address>
+					<a href="https://www.ief.uni-rostock.de/index.php?id=itti-bachelor">
+					<i class="fa fa-graduation-cap">&nbsp;</i> <strong>Student</strong><br>
+						Bachelor Informationstechnik/Technische Informatik
+					</a>
+				</address>
             </div>
         </div>
         <hr>
@@ -161,24 +173,9 @@ a:hover
 
                 var image =
                     '<a href="' + item.photo_url + '">' +
-                    '<img style="width:25%;" src="' + item.url_z +
-                    '"/></a><p>' + item.title +
-                    '</p>';
-
-                $(image).appendTo("#images");
-                
-                return (i++!=2);
-
-            });
-        });
-        $.getJSON("    https://github.com/mperlet.xml", function(data){
-			console.log(data);
-            $.each(data, function(i,item){
-
-                var image =
-                    '<a href="' + item.photo_url + '">' +
-                    '<img style="width:25%;" src="' + item.url_z +
-                    '"/></a>' + item.title;
+                    '<img style="width:75%;" src="' + item.url_z +
+                    '"/></a><p><small>' + item.title +
+                    '</small></p>';
 
                 $(image).appendTo("#images");
                 
