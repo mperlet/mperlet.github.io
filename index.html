@@ -15,68 +15,80 @@
     <link href=
     "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
     rel="stylesheet">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script src=
     "https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 
     <script src=
     "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.js"></script>
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <style>
-.background-image {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
+	<style>
+	.background-image {
+		position:fixed;
+		left:0;
+		right:0;
+		z-index:-1;
+		display:block;
+		background-image:url(https://farm4.staticflickr.com/3845/14450155074_042c51154a_h.jpg);
+		width:100%;
+		height:100%;
+		-webkit-filter:blur(5px);
+		-moz-filter:blur(5px);
+		-o-filter:blur(5px);
+		-ms-filter:blur(5px);
+		filter:blur(5px);
+	}
 
-    display: block;
-    background-image: url('https://farm4.staticflickr.com/3845/14450155074_042c51154a_h.jpg');
-    width: 100%;
-    height: 100%;
+	.content {
+		position:fixed;
+		left:0;
+		right:0;
+		z-index:9999;
+		margin-left:20px;
+		margin-right:20px;
+		margin-top:3%;
+	}
 
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    }
+	a:link {
+		text-decoration:none;
+	}
 
-    .content {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 3%;
-    }
-a:link {
-    text-decoration: none;
-}
-a { color: inherit;text-decoration: none; } 
-a:hover 
-{	
-	    -webkit-filter: blur(5px);
+	a {
+		color:inherit;
+		text-decoration:none;
+	}
 
-     color: white; 
-     text-decoration:none; 
-     cursor:pointer;  
-}
-    </style>
+	a:hover {
+		-webkit-filter:blur(5px);
+		color:#FFF;
+		text-decoration:none;
+		cursor:pointer;
+	}
+
+	.scrolldiv {
+		position:absolut;
+		left:0;
+		top:0;
+		width:100%;
+		height:40%;
+		overflow:auto;
+		overflow-y:visible;
+	}
+
+	::-webkit-scrollbar {
+		display:none;
+	}
+	</style>
 </head>
 
 <body>
     <div class="background-image"></div>
 
-    <div class="container-fluid content2">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 col-md-offset-4"><img alt=
             "Responsive image img-circle" class="img-responsive img-circle"
@@ -111,8 +123,10 @@ a:hover
 
                     <h2>Software</h2>
 
-                    <p>Web 2.0, Python, Linux</p>
+                    <p>Python, Linux, Smart-Home, LaTeX, Web 2.0</p>
 					</a>
+					<hr>
+					<div id="repos" class="scrolldiv"></div>
             </div><!-- /.col-lg-4 -->
 
                 <div class="col-lg-3">
@@ -126,8 +140,7 @@ a:hover
 					</a>
 					
 					<hr />
-					
-					<div id="images"></div>
+					<div id="images" class="scrolldiv"></div>
                 </div><!-- /.col-lg-4 -->
 
                 <div class="col-lg-3">
@@ -145,10 +158,9 @@ a:hover
 					   href="https://twitter.com/mperlet_" 
 					   data-chrome="nofooter transparent noheader noscrollbar" 
 					   data-widget-id="324534752004685824"
-					   height="100">
+					   style="height:40%;">
 					   Tweets von @mperlet_
 					</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </div><!-- /.col-lg-4 -->
 
                 <div class="col-lg-3">
@@ -156,12 +168,16 @@ a:hover
                     "http://blog.mperlet.de/">
                     <i class="fa fa-bold fa-5x fa-inverse">&nbsp;</i>
                     <h2>Blog</h2>
-                    <p>Technischer Firlefanz</p>
+                    <p>Alltags Probleme, Ideen, Tipps und Tricks, Projekte</p>
 					</a>
-                    
+                    <hr />
+					<div id="blog" class="scrolldiv"></div>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
+            
+            
         </div>
+        <hr>
     </div>
     
 <script type="text/javascript" charset="utf-8">
@@ -179,12 +195,46 @@ a:hover
 
                 $(image).appendTo("#images");
                 
-                return (i++!=2);
+                return (i++!=5);
+
+            });
+        });
+        $.getJSON("https://api.github.com/users/mperlet/repos", function(data){
+			
+            $.each(data, function(i,item){
+				console.log(item);
+				if (!item.fork){
+				var repo = '<a href="'+ item.html_url +'"><p><strong>' + item.name +
+					'</strong></a><br><small>' + item.description + '</small></p>'
+
+                $(repo).appendTo("#repos");
+			}
+                
 
             });
         });
     });
-    
+    function blogger(json) {
+    for (var i = 0; i < json.feed.entry.length; i++) {
+      for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+        if (json.feed.entry[i].link[j].rel == 'alternate') {
+          var postUrl = json.feed.entry[i].link[j].href;
+          break;
+        }
+      }
+      var postTitle = json.feed.entry[i].title.$t;
+      var postAuthor = json.feed.entry[i].author[0].name.$t;
+      var postSummary = json.feed.entry[i].summary.$t;
+      var entryShort = postSummary.substring(0, 90);
+      var entryEnd = entryShort.lastIndexOf(" ");
+      var postContent = entryShort.substring(0, entryEnd) + '...';
+      var item = '<p><strong><a href=' + postUrl + '>' + postTitle + '</a></strong><br><small>' + postContent + '</small></p>';
+      $(item).appendTo("#blog");
+    }
+  }
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 </script>
+<script src="http://blog.mperlet.de/feeds/posts/summary?orderby=published&max-results=5&alt=json-in-script&callback=blogger"></script>
+
 </body>
 </html>
