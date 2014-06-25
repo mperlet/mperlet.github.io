@@ -5,7 +5,15 @@
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-
+	<meta name="author" content="Mathias Perlet">
+	<meta name="publisher" content="Mathias Perlet">
+	<meta name="copyright" content="Mathias Perlet">
+	<meta name="description" content="Homepage von Mathias Perlet, Kurzprofil, Projektseite, Fotografie.">
+	<meta name="keywords" content="mperlet, mperlet_, python, twitter, blog, bootstrap, internet, rostock, technische, informatik, itti, web20, fotografie, flickr, sony, alpha">
+	<meta name="page-topic" content="Forschung Technik">
+	<meta name="page-type" content="Private Homepage">
+	<meta name="audience" content="Alle"><meta http-equiv="content-language" content="de">
+	<meta name="robots" content="index, follow">
     <title>Mathias Perlet</title>
     <link href="http://blog.mperlet.de/favicon.ico" rel="icon" type=
     "image/x-icon"><!-- Bootstrap -->
@@ -27,32 +35,28 @@
     <![endif]-->
 
 	<style>
-	.background-image {
-		position:fixed;
-		left:0;
-		right:0;
-		z-index:-1;
-		display:block;
-		background-image:url(https://farm4.staticflickr.com/3845/14450155074_042c51154a_h.jpg);
-		width:100%;
-		height:100%;
+	body {
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
+		height: 100%;
+		background-color: black;
+
+	}
+
+	body:before {
+		content: "";
+		position: absolute;
+		background: url(https://farm4.staticflickr.com/3845/14450155074_042c51154a_h.jpg);
+		background-size: cover;
+		z-index: -1; /* Keep the background behind the content */
+		height: 100%; width: 100%; /* Using Glen Maddern's trick /via @mente */
 		-webkit-filter:blur(5px);
 		-moz-filter:blur(5px);
 		-o-filter:blur(5px);
 		-ms-filter:blur(5px);
 		filter:blur(5px);
 	}
-
-	.content {
-		position:fixed;
-		left:0;
-		right:0;
-		z-index:9999;
-		margin-left:20px;
-		margin-right:20px;
-		margin-top:3%;
-	}
-
+	
 	a:link {
 		text-decoration:none;
 	}
@@ -74,7 +78,7 @@
 		left:0;
 		top:0;
 		width:100%;
-		height:40%;
+		height:35%;
 		overflow:auto;
 		overflow-y:visible;
 	}
@@ -82,10 +86,20 @@
 	::-webkit-scrollbar {
 		display:none;
 	}
+	.title {
+			font-size:200%;
+	}
+	@media only screen and (max-device-width: 800px) {
+		body:before {
+			background-size: 1000% auto;
+			height:250%;
+			}
+	}
 	</style>
 </head>
 
 <body>
+
     <div class="background-image"></div>
 
     <div class="container-fluid">
@@ -119,9 +133,8 @@
                 <div class="col-lg-3">
 					<a href=
                     "https://github.com/mperlet">
-                    <i class="fa fa-github fa-5x fa-inverse">&nbsp;</i>
-
-                    <h2>Software</h2>
+                    <i class="fa fa-github fa-5x fa-inverse">&nbsp;
+                    </i> <strong class="title">Software</strong>
 
                     <p>Python, Linux, Smart-Home, LaTeX, Web 2.0</p>
 					</a>
@@ -133,8 +146,8 @@
 					<a href=
                     "https://www.flickr.com/photos/mperlet">
                     <i class="fa fa-camera fa-5x fa-inverse">&nbsp;</i>
-
-                    <h2>Fotos</h2>
+					<strong class="title">Fotos</strong>
+                    
 
                     <p>Hobbyfotograf, Sony Alpha 58, Landschaften, Flickr</p>
 					</a>
@@ -148,17 +161,17 @@
                     "https://twitter.com/mperlet_">
                     <i class="fa fa-twitter fa-5x fa-inverse">&nbsp;</i>
 
-                    <h2>Twitter</h2>
+                    <strong class="title">Twitter</strong>
 
                     <p>Microblog, Bilder aus dem Alltag, Gedanken</p>
                     </a>
                     
                     <hr />
-                    <a class="twitter-timeline" 
+                    <a class="twitter-timeline scrolldiv" 
 					   href="https://twitter.com/mperlet_" 
 					   data-chrome="nofooter transparent noheader noscrollbar" 
 					   data-widget-id="324534752004685824"
-					   style="height:40%;">
+					   >
 					   Tweets von @mperlet_
 					</a>
                 </div><!-- /.col-lg-4 -->
@@ -167,7 +180,7 @@
 					<a href=
                     "http://blog.mperlet.de/">
                     <i class="fa fa-bold fa-5x fa-inverse">&nbsp;</i>
-                    <h2>Blog</h2>
+                    <strong class="title">Blog</strong>
                     <p>Alltags Probleme, Ideen, Tipps und Tricks, Projekte</p>
 					</a>
                     <hr />
@@ -177,7 +190,6 @@
             
             
         </div>
-        <hr>
     </div>
     
 <script type="text/javascript" charset="utf-8">
