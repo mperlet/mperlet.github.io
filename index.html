@@ -315,16 +315,20 @@
             });
         });
         $.getJSON("https://api.github.com/users/mperlet/repos", function(data){
-
+			prop = "stargazers_count";
+			data = data.sort(function(a, b) {
+				return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+			});
             $.each(data, function(i,item){
                 if (!item.fork){
-                var repo = '<a href="'+ item.html_url +'"><p><strong>' + item.name +
-                    '</strong></a><br><small>' + item.description + '</small></p>'
-
+                var repo = '<a href="'+ item.html_url +'"><p><strong>' + item.name + 
+                    '</strong>';
+                if(item.stargazers_count > 0) {
+					repo += '<small> &#x2605;' + item.stargazers_count + '</small>';
+				}
+                repo += '</a><br><small>' + item.description + '</small></p>';
                 $(repo).appendTo("#repos");
             }
-
-
             });
         });
     });
