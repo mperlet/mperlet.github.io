@@ -113,6 +113,15 @@
     .superfont {
         font-family: 'Handlee', cursive;
     }
+    
+    .mirror-image {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
     </style>
 </head>
 
@@ -123,7 +132,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 superfont"><img alt=
-            "Responsive image img-circle" class="img-responsive img-circle"
+            "Responsive image img-circle" class="img-responsive img-circle mirror-image"
             src="http://www.gravatar.com/avatar/5a723776dce27109fe40081cb2b88216.png?s=200"></div>
 
             <div class="col-md-4 superfont" id="infobox">
