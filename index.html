@@ -41,6 +41,7 @@
 
     <script src=
     "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -80,8 +81,9 @@
 
     #infobox {
         color: white;
+
     }
-    
+
     a:hover {
         -webkit-filter:blur(1px);
         color:#FFF;
@@ -112,8 +114,11 @@
     }
     .superfont {
         font-family: 'Handlee', cursive;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
-    
+
     .mirror-image {
         -moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
@@ -121,6 +126,12 @@
         transform: scaleX(-1);
         filter: FlipH;
         -ms-filter: "FlipH";
+    }
+    hr {
+        border: 0;
+        height: 1px;
+        margin: 1rem;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
     }
     </style>
 </head>
@@ -152,7 +163,6 @@
             </div>
         </div>
         <hr>
-
         <div class="container marketing">
             <!-- Three columns of text below the carousel -->
 
@@ -176,7 +186,7 @@
                     <strong class="title superfont">Fotos</strong>
 
 
-                    <p class="superfont">Hobbyfotografie, Sony Alpha 77 II, Landschaften, Flickr</p>
+                    <p class="superfont">Fotografie, Sony Alpha 77 II, Flickr</p>
                     </a>
 
                     <hr />
@@ -190,7 +200,7 @@
 
                     <strong class="title superfont">Twitter</strong>
 
-                    <p class="superfont">Microblog, Bilder aus dem Alltag, Gedanken</p>
+                    <p class="superfont">Microblog, Bilder aus dem Alltag</p>
                     </a>
 
                     <hr />
@@ -239,31 +249,31 @@
       <div class="modal-body superfont">
       <blockquote>
         <p>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <a href="http://www.facebook.com/mperlet1">Facebook</a></p>
         <footer>meine Facebook Seite</footer>
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="https://www.xing.com/profile/Mathias_Perlet">Xing</a></p>
         <footer>meine Xing Seite</footer>
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://instagram.com/mperlet_/">Instagram</a></p>
         <footer>meine Instagram Seite</footer>
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="https://gist.github.com/mperlet">Github Gists</a></p>
         <footer>Codeschnipsel</footer>
       </blockquote>
           <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://parseit.mperlet.de/">parseit.mperlet.de</a></p>
         <footer>Webpage-Parser mit CSS-Selectoren, kann für APIs oder nur zum Testen genutzt werden.
             Hier ein Beispiel um das Profil-Foto ausgeben zu lassen. <a href="http://goo.gl/OMjy7l">Beispiel</a>
@@ -271,27 +281,27 @@
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="#">fsend.herokuapp.com</a></p>
-        <footer>Dateien mit curl versenden: "curl -T meine.datei fsend.herokuapp.com". 
+        <footer>Dateien mit curl versenden: "curl -T meine.datei fsend.herokuapp.com".
                 Die Seite hat keine Startseite!
         </footer>
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://mensa.mperlet.de/">mensa.mperlet.de</a></p>
         <footer>Speiseplan der Rostocker Mensa-Südstadt</footer>
       </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://wal.mperlet.de/">wal.mperlet.de</a></p>
         <footer>Write a Letter. Ein Web-Frontend um Briefe mit LaTeX zu schreiben.</footer>
-      </blockquote>      
+      </blockquote>
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> 
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="https://rawgit.com/mperlet/ca182b03f8468e4e65ca/raw/index.html">Westgeld</a></p>
         <footer>Berechnet einen fairen Prozentsatz für gemeinsame Ausgaben.</footer>
       </blockquote>
@@ -302,61 +312,90 @@
   </div>
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        var i = 0;
-        $.getJSON("http://flickrit.pboehm.org/photos/mperlet", function(data){
+$(document).ready(function() {
+    flickrTimeline("http://flickrit.pboehm.org/photos/mperlet");
+    githubTimeline("https://api.github.com/users/mperlet/repos");
+    $('#twitter-widget-0').css("height", "");
+});
 
-            $.each(data, function(i,item){
 
-                var image =
-                    '<a href="' + item.photo_url + '">' +
-                    '<img style="width:75%;" src="' + item.url_z +
-                    '"/></a><p><small>' + item.title  + '  &#x2605;' + item.count_faves +
-                    '</small></p>';
+/*
+    Flickr-Timeline
+*/
+function flickrTimeline(apiUri) {
+    var maxPictures = 10;
+    $.getJSON(apiUri, function(data){
+        $.each(data, function(i,item){
+            var image = '<a href="'
+                + item.photo_url + '"><img style="width:75%;" src="'
+                + item.url_z + '"/></a><p><small>'
+                + item.title  + '  &#x2605;'
+                + item.count_faves + '</small></p>';
 
-                $(image).appendTo("#images");
-
-                return (i++!=10);
-
-            });
+            $(image).appendTo("#images");
+            return (maxPictures--!=1);
         });
-        $.getJSON("https://api.github.com/users/mperlet/repos", function(data){
-			prop = "stargazers_count";
-			data = data.sort(function(a, b) {
-				return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
-			});
-            $.each(data, function(i,item){
-                if (!item.fork){
-                var repo = '<a href="'+ item.html_url +'"><p><strong>' + item.name + 
+    });
+}
+
+
+/*
+    Github-Timeline
+*/
+function githubTimeline(apiUri) {
+    $.getJSON(apiUri, function(data){
+        prop = "stargazers_count";
+        data = data.sort(function(a, b) {
+            return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+        });
+        $.each(data, function(i,item){
+            if (!item.fork){
+                var repo = '<a href="'+ item.html_url +'"><p><strong>' + item.name +
                     '</strong>';
                 if(item.stargazers_count > 0) {
-					repo += '<small> &#x2605;' + item.stargazers_count + '</small>';
-				}
+                    repo += '<small> &#x2605;' + item.stargazers_count + '</small>';
+                }
                 repo += '</a><br><small>' + item.description + '</small></p>';
                 $(repo).appendTo("#repos");
             }
-            });
         });
     });
-    function blogger(json) {
-    for (var i = 0; i < json.feed.entry.length; i++) {
-      for (var j = 0; j < json.feed.entry[i].link.length; j++) {
-        if (json.feed.entry[i].link[j].rel == 'alternate') {
-          var postUrl = json.feed.entry[i].link[j].href;
-          break;
-        }
-      }
-      var postTitle = json.feed.entry[i].title.$t;
-      var postAuthor = json.feed.entry[i].author[0].name.$t;
-      var postSummary = json.feed.entry[i].summary.$t;
-      var entryShort = postSummary.substring(0, 90);
-      var entryEnd = entryShort.lastIndexOf(" ");
-      var postContent = entryShort.substring(0, entryEnd) + '...';
-      var item = '<p><strong><a href=' + postUrl + '>' + postTitle + '</a></strong><br><small>' + postContent + '</small></p>';
-      $(item).appendTo("#blog");
+}
+
+
+/*
+    Blog-Feed
+*/
+function blogManifestResponse(response) {
+    articles = response.sort(function (a,b) {
+        return new Date(b.published.split('.').reverse().join('-')) -
+               new Date(a.published.split('.').reverse().join('-'));
+    });
+    $.each(articles, function(i, post) {
+        var item = '<p><strong><a href=http://www.mperlet.de/blog/#!'
+                    + post.hash + '>'
+                    + post.title + '</a></strong><br><small>'
+                    + post.published + '</small></p>';
+        $(item).appendTo("#blog");
+    })
+}
+
+
+/*
+    Twitter-Timeline
+*/
+function twtrhook(){
+    var twW = $('#twitter-widget-0');
+    if(twW.css('height') === undefined || twW.css('height') === '0px') {
+        setTimeout(twtrhook, 250);
+    } else {
+    twW.css('height', '');
     }
-  }
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+}
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);twtrhook();}}(document,"script","twitter-wjs");
+/*
+    Google Analytics
+*/
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -367,7 +406,7 @@
   ga('send', 'pageview');
 
 </script>
-<script src="http://blog.mperlet.de/feeds/posts/summary?orderby=published&max-results=5&alt=json-in-script&callback=blogger"></script>
-
+<!-- JSONP-Blog-->
+<script src="https://cdn.rawgit.com/mperlet/blog/gh-pages/manifest.js"></script>
 </body>
 </html>
