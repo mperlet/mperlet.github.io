@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Mathias Perlet - About Me</title>
+    <title>About Mathias Perlet</title>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="application-name" content="mperlet.de" />
@@ -30,17 +30,16 @@
     <link href="http://blog.mperlet.de/favicon.ico" rel="icon" type=
     "image/x-icon"><!-- Bootstrap -->
     <link href=
-    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
     rel="stylesheet">
     <link href=
-    "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+    "//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
     rel="stylesheet">
 
     <script src=
-    "//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+    "//code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src=
-    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -133,6 +132,10 @@
         margin: 1rem;
         background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
     }
+
+    .large {
+        width: 99.9%;
+    }
     </style>
 </head>
 
@@ -145,7 +148,7 @@
         <div class="container marketing">
             <div class="row">
             <div class="col-md-2 superfont"><img alt=
-            "Responsive image img-circle" class="img-responsive img-circle mirror-image"
+            "Responsive image img-circle" class="img-responsive img-circle <!--mirror-image-->"
             src="http://www.gravatar.com/avatar/5a723776dce27109fe40081cb2b88216.png?s=200"></div>
 
             <div class="col-md-4 superfont" id="infobox">
@@ -175,8 +178,7 @@
                     "https://github.com/mperlet">
                     <i class="fa fa-github fa-4x fa-inverse">&nbsp;
                     </i> <strong class="title superfont">Software</strong>
-
-                    <p class="superfont">Python, Linux, Smart-Home, LaTeX, Web 2.0</p>
+                    <small class="superfont">&#61714; mehr auf Github</small>
                     </a>
                     <hr>
                     <div id="repos" class="scrolldiv"></div>
@@ -186,14 +188,13 @@
                     <a href=
                     "https://www.flickr.com/photos/mperlet">
                     <i class="fa fa-camera fa-4x fa-inverse">&nbsp;</i>
-                    <strong class="title superfont">Fotos</strong>
-
-
-                    <p class="superfont">Fotografie, Sony Alpha 77 II, Flickr</p>
+                    <strong class="title superfont">Fotografie</strong>
+                    <small class="superfont">&#61714; mehr auf Flickr</small>
                     </a>
 
                     <hr />
                     <div id="images" class="scrolldiv"></div>
+                    <small id="flickrStat"></small>
                 </div><!-- /.col-lg-4 -->
 
                 <div class="col-lg-3">
@@ -201,9 +202,8 @@
                     "https://twitter.com/mperlet_">
                     <i class="fa fa-twitter fa-4x fa-inverse">&nbsp;</i>
 
-                    <strong class="title superfont">Twitter</strong>
-
-                    <p class="superfont">Microblog, Bilder aus dem Alltag</p>
+                    <strong class="title superfont">Microblog</strong>
+                    <span class="superfont">&#61714; mehr auf Twitter</span>
                     </a>
 
                     <hr />
@@ -218,10 +218,10 @@
 
                 <div class="col-lg-3">
                     <a href=
-                    "http://blog.mperlet.de/">
+                    "http://www.mperlet.de/blog/">
                     <i class="fa fa-bold fa-4x fa-inverse">&nbsp;</i>
-                    <strong class="title superfont">Blog</strong>
-                    <p class="superfont">Problemlösungen, Ideen, Tipps und Tricks, Projekte</p>
+                    <strong class="title superfont">Techblog</strong>
+                    <small class="superfont">&#61714; mehr auf mperlet.de/blog</small>
                     </a>
                     <hr />
                     <div id="blog" class="scrolldiv"></div>
@@ -235,8 +235,9 @@
     <footer class="footer superfont">
       <div class="container" style="text-align: center;">
         <p class="text-muted">
-        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#MoreModal">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> More Content
+        <button type="button" class="btn btn-default btn-xs large" data-toggle="modal" data-target="#MoreModal">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Mehr Links und Projekte
         </button>
         </p>
       </div>
@@ -247,38 +248,32 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Extra Content</h4>
+        <h4 class="modal-title" id="myModalLabel">Links und Projekte</h4>
       </div>
       <div class="modal-body superfont">
       <blockquote>
         <p>
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <a href="http://www.facebook.com/mperlet1">Facebook</a></p>
-        <footer>meine Facebook Seite</footer>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <a href="https://www.xing.com/profile/Mathias_Perlet">Xing</a>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <a href="http://instagram.com/mperlet_/">Instagram</a>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <a href="https://gist.github.com/mperlet">Github Gists</a>
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <a href="http://www.facebook.com/mperlet1">Facebook</a>
+            </p>
       </blockquote>
       <blockquote>
         <p>
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://www.xing.com/profile/Mathias_Perlet">Xing</a></p>
-        <footer>meine Xing Seite</footer>
+            <a href="http://wal.mperlet.de/">wal.mperlet.de</a></p>
+        <footer>Write a Letter. Ein Web-Frontend um Briefe mit LaTeX zu schreiben.</footer>
       </blockquote>
-      <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="http://instagram.com/mperlet_/">Instagram</a></p>
-        <footer>meine Instagram Seite</footer>
-      </blockquote>
-      <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://gist.github.com/mperlet">Github Gists</a></p>
-        <footer>Codeschnipsel</footer>
-      </blockquote>
-          <blockquote>
+        <blockquote>
         <p>
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://parseit.mperlet.de/">parseit.mperlet.de</a></p>
-        <footer>Webpage-Parser mit CSS-Selectoren, kann für APIs oder nur zum Testen genutzt werden.
+        <footer>Webpage-Parser mit CSS-Selectoren, kann für APIs oder nur zum Testen genutzt werden.<br>
             Hier ein Beispiel um das Profil-Foto ausgeben zu lassen. <a href="http://goo.gl/OMjy7l">Beispiel</a>
         </footer>
       </blockquote>
@@ -295,12 +290,6 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <a href="http://mensa.mperlet.de/">mensa.mperlet.de</a></p>
         <footer>Speiseplan der Rostocker Mensa-Südstadt</footer>
-      </blockquote>
-      <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="http://wal.mperlet.de/">wal.mperlet.de</a></p>
-        <footer>Write a Letter. Ein Web-Frontend um Briefe mit LaTeX zu schreiben.</footer>
       </blockquote>
       <blockquote>
         <p>
@@ -327,18 +316,37 @@ $(document).ready(function() {
 */
 function flickrTimeline(apiUri) {
     var maxPictures = 10;
+    var stat = {};
+    stat.imagesCtr = 0;
+    stat.favs = 0;
+    stat.comments = 0;
+    stat.views = 0;
     $.getJSON(apiUri, function(data){
         $.each(data, function(i,item){
-            var image = '<a href="'
-                + item.photo_url + '"><img style="width:75%;" src="'
-                + item.url_z + '"/></a><p><small>'
-                + item.title  + '  &#x2605;'
-                + item.count_faves + '</small></p>';
+            if(maxPictures-->0) {
+                var image = '<a href="'
+                    + item.photo_url + '"><img style="width:75%;" src="'
+                    + item.url_z + '"/></a><p><small>'
+                    + item.title  + '  &#x2605;'
+                    + item.count_faves + '</small></p>';
 
-            $(image).appendTo("#images");
-            return (maxPictures--!=1);
+                $(image).appendTo("#images");
+            }
+            stat.imagesCtr++;
+            stat.favs += parseInt(item.count_faves);
+            stat.comments += parseInt(item.count_comments);
+            stat.views += parseInt(item.views);
         });
+        console.log(stat);
+        if(stat.views != 0) {
+        var flickrStat = "Statistik über alle Fotos:"
+        flickrStat += "&#61550; "+ parseInt(stat.views/1000) + "k, ";
+        flickrStat += "&#61446; " + parseInt(stat.favs/1000) + "k, ";
+        flickrStat += "&#61557; " + parseInt(stat.comments/1000) + "k"
+        $("#flickrStat").html(flickrStat);
+        }
     });
+
 }
 
 
@@ -396,18 +404,6 @@ function twtrhook(){
     }
 }
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);twtrhook();}}(document,"script","twitter-wjs");
-/*
-    Google Analytics
-*/
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-54716457-1', 'auto');
-  ga('send', 'pageview');
-
 </script>
 <!-- JSONP-Blog-->
 <script src="https://cdn.rawgit.com/mperlet/blog/gh-pages/manifest.js"></script>
