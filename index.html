@@ -30,22 +30,22 @@
     <link href="http://blog.mperlet.de/favicon.ico" rel="icon" type=
     "image/x-icon"><!-- Bootstrap -->
     <link href=
-    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     rel="stylesheet">
     <link href=
-    "//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"
+    "//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
     rel="stylesheet">
 
     <script src=
     "//code.jquery.com/jquery-2.2.3.min.js"></script>
     <script src=
-    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">    
     <style>
     body {
         position: absolute;
@@ -112,7 +112,7 @@
             }
     }
     .superfont {
-        font-family: 'Handlee', cursive;
+        font-family: 'Source Code Pro', monospace;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -162,7 +162,7 @@
                 <address>
                     <a href="https://www.ief.uni-rostock.de/index.php?id=itti-master">
                     <i class="fa fa-graduation-cap">&nbsp;</i> <strong>Student</strong><br>
-                        Master Informationstechnik/Technische Informatik
+                        Informationstechnik/Technische Informatik
                     </a>
                 </address>
             </div>
@@ -177,8 +177,8 @@
                     <a href=
                     "https://github.com/mperlet">
                     <i class="fa fa-github fa-4x fa-inverse">&nbsp;
-                    </i> <strong class="title superfont">Software</strong>
-                    <small class="superfont">&#61714; mehr auf Github</small>
+                    </i> <strong class="title superfont">Software</strong><br />
+                    <small class="superfont"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Github</small>
                     </a>
                     <hr>
                     <div id="repos" class="scrolldiv"></div>
@@ -188,8 +188,8 @@
                     <a href=
                     "https://www.flickr.com/photos/mperlet">
                     <i class="fa fa-camera fa-4x fa-inverse">&nbsp;</i>
-                    <strong class="title superfont">Fotografie</strong>
-                    <small class="superfont">&#61714; mehr auf Flickr</small>
+                    <strong class="title superfont">Fotografie</strong><br />
+                    <small class="superfont"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Flickr</small>
                     </a>
 
                     <hr />
@@ -201,9 +201,8 @@
                     <a href=
                     "https://twitter.com/mperlet_">
                     <i class="fa fa-twitter fa-4x fa-inverse">&nbsp;</i>
-
-                    <strong class="title superfont">Microblog</strong>
-                    <span class="superfont">&#61714; mehr auf Twitter</span>
+                    <strong class="title superfont">Microblog</strong><br />
+                    <span class="superfont"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Twitter</span>
                     </a>
 
                     <hr />
@@ -220,8 +219,8 @@
                     <a href=
                     "http://www.mperlet.de/blog/">
                     <i class="fa fa-bold fa-4x fa-inverse">&nbsp;</i>
-                    <strong class="title superfont">Techblog</strong>
-                    <small class="superfont">&#61714; mehr auf mperlet.de/blog</small>
+                    <strong class="title superfont">Techblog</strong><br />
+                    <small class="superfont"><i class="fa fa-hand-o-right" aria-hidden="true"></i> mperlet.de/blog</small>
                     </a>
                     <hr />
                     <div id="blog" class="scrolldiv"></div>
@@ -253,13 +252,13 @@
       <div class="modal-body superfont">
       <blockquote>
         <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://www.xing.com/profile/Mathias_Perlet">Xing</a>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="http://instagram.com/mperlet_/">Instagram</a>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://gist.github.com/mperlet">Github Gists</a>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <i class="fa fa-xing" aria-hidden="true"></i>
+            <a href="https://www.xing.com/profile/Mathias_Perlet">Xing</a> | 
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <a href="http://instagram.com/mperlet_/">Instagram</a> | 
+            <i class="fa fa-github-alt" aria-hidden="true"></i>
+            <a href="https://gist.github.com/mperlet">Github Gists</a> | 
+            <i class="fa fa-facebook" aria-hidden="true"></i>
             <a href="http://www.facebook.com/mperlet1">Facebook</a>
             </p>
       </blockquote>
@@ -298,7 +297,8 @@
         <footer>Berechnet einen fairen Prozentsatz für gemeinsame Ausgaben.</footer>
       </blockquote>
       <hr />
-      Diese Seite wurde mithilfe von Bootstrap 3, jQuery und Github-Pages erstellt.
+      Diese Seite wurde mithilfe von Bootstrap 3, 
+      jQuery und Github-Pages erstellt.
       </div>
     </div>
   </div>
@@ -339,10 +339,10 @@ function flickrTimeline(apiUri) {
         });
         console.log(stat);
         if(stat.views != 0) {
-        var flickrStat = "Statistik über alle Fotos:"
-        flickrStat += "&#61550; "+ parseInt(stat.views/1000) + "k, ";
-        flickrStat += "&#61446; " + parseInt(stat.favs/1000) + "k, ";
-        flickrStat += "&#61557; " + parseInt(stat.comments/1000) + "k"
+        var flickrStat = "<i class=\"fa fa-bar-chart\" aria-hidden=\"true\"></i> Statistik: "
+        flickrStat += "<i class=\"fa fa-eye\" aria-hidden=\"true\"></i> "+ parseInt(stat.views/1000) + "k, ";
+        flickrStat += "<i class=\"fa fa-star\" aria-hidden=\"true\"></i> " + parseInt(stat.favs/1000) + "k, ";
+        flickrStat += "<i class=\"fa fa-comments\" aria-hidden=\"true\"></i> " + parseInt(stat.comments/1000) + "k"
         $("#flickrStat").html(flickrStat);
         }
     });
