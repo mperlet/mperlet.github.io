@@ -382,7 +382,7 @@ function blogManifestResponse(response) {
                new Date(a.published.split('.').reverse().join('-'));
     });
     $.each(articles, function(i, post) {
-        var item = '<p><strong><a href=http://www.mperlet.de/blog/#!'
+        var item = '<p><strong><a href=http://blog.mperlet.de/blog/#!'
                     + post.hash + '>'
                     + post.title + '</a></strong><br><small>'
                     + post.published + '</small></p>';
