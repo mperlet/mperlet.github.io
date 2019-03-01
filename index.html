@@ -204,18 +204,22 @@
                     </a>
 
                     <hr />
-                    <a class="twitter-timeline scrolldiv"
-                       href="https://twitter.com/mperlet_"
-                       data-chrome="nofooter transparent noheader noscrollbar"
-                       data-widget-id="324534752004685824"
-                       >
-                       Tweets von @mperlet_
-                    </a>
+                    <a class="twitter-timeline" 
+                       data-chrome="transparent noheader nofooter noscrollbar noborders" 
+                       data-height="580" 
+                       data-theme="dark" 
+                       href="https://twitter.com/mperlet_?ref_src=twsrc%5Etfw">
+                       Tweets by mperlet_
+                    </a> 
+                    <script async 
+                            src="https://platform.twitter.com/widgets.js" 
+                            charset="utf-8">
+                    </script>
                 </div><!-- /.col-lg-4 -->
 
                 <div class="col-lg-3">
                     <a href=
-                    "http://www.mperlet.de/blog/">
+                    "https://www.mperlet.de/blog/">
                     <i class="fa fa-bold fa-4x fa-inverse">&nbsp;</i>
                     <strong class="title superfont">Techblog</strong><br />
                     <small class="superfont"><i class="fa fa-hand-o-right" aria-hidden="true"></i> mperlet.de/blog</small>
@@ -256,8 +260,6 @@
             <a href="https://instagram.com/mperlet_/">Instagram</a> | 
             <i class="fa fa-github-alt" aria-hidden="true"></i>
             <a href="https://gist.github.com/mperlet">Github Gists</a> | 
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-            <a href="https://www.facebook.com/mperlet1">Facebook</a>
             </p>
       </blockquote>
       <blockquote>
@@ -266,32 +268,10 @@
             <a href="https://wal.mperlet.de/">wal.mperlet.de</a></p>
         <footer>Write a Letter. Ein Web-Frontend um Briefe mit LaTeX zu schreiben.</footer>
       </blockquote>
-        <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://parseit.mperlet.de/">parseit.mperlet.de</a></p>
-        <footer>Webpage-Parser mit CSS-Selectoren, kann für APIs oder nur zum Testen genutzt werden.<br>
-            Hier ein Beispiel um das Profil-Foto ausgeben zu lassen. <a href="http://goo.gl/OMjy7l">Beispiel</a>
-        </footer>
-      </blockquote>
       <blockquote>
         <p>
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="#">fsend.herokuapp.com</a></p>
-        <footer>Dateien mit curl versenden: "curl -T meine.datei fsend.herokuapp.com".
-                Die Seite hat keine Startseite!
-        </footer>
-      </blockquote>
-      <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://mensa.mperlet.de/">mensa.mperlet.de</a></p>
-        <footer>Speiseplan der Rostocker Mensa-Südstadt</footer>
-      </blockquote>
-      <blockquote>
-        <p>
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <a href="https://rawgit.com/mperlet/ca182b03f8468e4e65ca/raw/index.html">Westgeld</a></p>
+            <a href="https://westgeld.mperlet.de">Westgeld</a></p>
         <footer>Berechnet einen fairen Prozentsatz für gemeinsame Ausgaben.</footer>
       </blockquote>
       <hr />
@@ -305,7 +285,6 @@
 $(document).ready(function() {
     flickrTimeline("https://flickrit.pboehm.org/photos/mperlet");
     githubTimeline("https://api.github.com/users/mperlet/repos");
-    $('#twitter-widget-0').css("height", "");
 });
 
 
@@ -381,7 +360,7 @@ function blogManifestResponse(response) {
                new Date(a.published.split('.').reverse().join('-'));
     });
     $.each(articles, function(i, post) {
-        var item = '<p><strong><a href=http://blog.mperlet.de/blog/#!'
+        var item = '<p><strong><a href=https://blog.mperlet.de/blog/#!'
                     + post.hash + '>'
                     + post.title + '</a></strong><br><small>'
                     + post.published + '</small></p>';
@@ -389,19 +368,6 @@ function blogManifestResponse(response) {
     })
 }
 
-
-/*
-    Twitter-Timeline
-*/
-function twtrhook(){
-    var twW = $('#twitter-widget-0');
-    if(twW.css('height') === undefined || twW.css('height') === '0px') {
-        setTimeout(twtrhook, 250);
-    } else {
-    twW.css('height', '');
-    }
-}
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);twtrhook();}}(document,"script","twitter-wjs");
 </script>
 <!-- JSONP-Blog-->
 <script src="https://cdn.rawgit.com/mperlet/blog/gh-pages/manifest.js"></script>
